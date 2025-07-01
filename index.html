@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About Isaac Fineaso</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -11,30 +10,84 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/style.css" class="rel" />
+    <style>
+      body {
+        background: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      nav.navbar {
+        background-color: rgba(0, 123, 255, 0.85);
+      }
+      nav.navbar .navbar-brand,
+      nav.navbar .nav-link,
+      nav.navbar .dropdown-toggle {
+        color: #fff !important;
+      }
+      nav.navbar .nav-link.active {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      h1 {
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        color: #555;
+        margin-bottom: 2rem;
+      }
+      .card {
+        max-width: 320px;
+        margin: 0 auto 3rem auto;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+        border-radius: 12px;
+        background: rgba(255 255 255 / 0.95);
+      }
+      .card-img-top {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        height: 200px;
+        object-fit: cover;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem 0;
+        color: #777;
+        border-top: 1px solid #ddd;
+        margin-top: 4rem;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">Isaac Fineaso</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resume</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -44,54 +97,57 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                More Here
+                More
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Contact</a></li>
+                <li><a class="dropdown-item" href="#">Blog</a></li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <hr class="dropdown-divider" />
                 </li>
+                <li><a class="dropdown-item" href="#">Dev/Mission</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>
-</div>
-    <h1 class="text-primary p-4 border">Hello World</h1>
-    <h2>by Isaac</h2>
 
-    <div class="card" style="width: 18rem">
-      <img src="Golden Gate Brdg.webp" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Where I'm From...</h5>
-        <p class="card-text">
-        I am proud to have been born here! In San Francisco CA
-        </p>
-        <a href="https://www.youtube.com/watch?v=oLdr80iDFsc" class="btn btn-primary"  target="blank">Go somewhere</a>
+    <main class="container text-center">
+      <h1 class="text-primary">Hello, I'm Isaac Fineaso</h1>
+      <h2 class="mb-4">Developer | A/V Enthusiast | South San Francisco Native</h2>
+
+      <div class="card">
+        <img
+          src="Golden Gate Brdg.webp"
+          class="card-img-top"
+          alt="Golden Gate Bridge in San Francisco"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Where I'm From</h5>
+          <p class="card-text">
+            Proudly born and raised in San Francisco, CA — a city that
+            inspires creativity and innovation.
+          </p>
+          <a
+            href="https://www.youtube.com/watch?v=oLdr80iDFsc"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Watch My City</a
+          >
+        </div>
       </div>
-    </div>
+    </main>
+
+    <footer>
+      &copy; 2025 Isaac Fineaso — Proud participant of Dev/Mission
+    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    
   </body>
 </html>
