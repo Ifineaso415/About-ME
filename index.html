@@ -12,11 +12,11 @@
     />
     <style>
       body {
-        background: #f8f9fa;
+        background: #00000000;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
       nav.navbar {
-        background-color: rgba(0, 123, 255, 0.85);
+        background-color: rgba(0, 0, 0, 0.85);
       }
       nav.navbar .navbar-brand,
       nav.navbar .nav-link,
@@ -28,6 +28,7 @@
         text-decoration: underline;
       }
       h1 {
+        color: #000000;
         font-weight: 700;
         margin-top: 2rem;
         margin-bottom: 0.5rem;
@@ -41,7 +42,7 @@
         margin: 0 auto 3rem auto;
         box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
         border-radius: 12px;
-        background: rgba(255 255 255 / 0.95);
+        background: rgba(255, 255, 255, 0.163);
       }
       .card-img-top {
         border-top-left-radius: 12px;
@@ -50,22 +51,24 @@
         object-fit: cover;
       }
       .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #000000;
+        border-color: #ffffff;
       }
       footer {
         text-align: center;
         padding: 1rem 0;
-        color: #777;
+        color: #00000067;
         border-top: 1px solid #ddd;
         margin-top: 4rem;
       }
+
     </style>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="#">Isaac Fineaso</a>
+        <a class="navbar-brand" href="#">ABOUT ME</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -76,12 +79,11 @@
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
-        </button>
-
+      </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Projects</a>
@@ -96,16 +98,15 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >
-                More
-              </a>
+              ></a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Contact</a></li>
                 <li><a class="dropdown-item" href="#">Blog</a></li>
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="#">Dev/Mission</a></li>
+                <li><a class="dropdown-item btn btn-primary" target="blank"
+                   href="https://devmission-rpa.github.io/rpa-curriculum/index.html">Dev/Mission</a></li>
               </ul>
             </li>
           </ul>
@@ -114,12 +115,15 @@
     </nav>
 
     <main class="container text-center">
-      <h1 class="text-primary">Hello, I'm Isaac Fineaso</h1>
-      <h2 class="mb-4">
-        Developer | A/V Enthusiast | South San Francisco Native
-      </h2>
+      <h1>Hello My Name Is Isaac Fineaso</h1>
+      <h2 class="mb-4">A Proud Samoan & San Francisco Native</h2>
 
-
+        <img
+          src="Golden Gate Brdg.webp"
+          class="card-img-top"
+          alt="Golden Gate Bridge in San Francisco"
+        />
+        <div class="card-body">
           <h5 class="card-title">Where I'm From</h5>
           <p class="card-text">
             Proudly born and raised in San Francisco, CA — a city that inspires
@@ -130,7 +134,7 @@
             class="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"
-            >Watch My City</a
+            >City Views</a
           >
         </div>
       </div>
