@@ -3,189 +3,336 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Isaac Fineaso</title>
+    <title>Isaac's About Me</title>
+    <meta
+      name="description"
+      content="Portfolio of Isaac Fineaso, a web and IoT developer."
+    />
+
+    <!-- Google Fonts: Oswald -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
     />
+
     <style>
-      body {
-        background: #00000000;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      /* Base */
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: "Oswald", sans-serif;
+        background-color: #ffffff;
+        color: #000000;
       }
-      nav.navbar {
-        background-color: rgba(0, 0, 0, 0.85);
+
+      /* Splash */
+      .splash {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        padding: 0 1rem;
       }
-      nav.navbar .navbar-brand,
-      nav.navbar .nav-link,
-      nav.navbar .dropdown-toggle {
-        color: #fff !important;
+
+      .fade-out {
+        opacity: 0;
       }
-      nav.navbar .nav-link.active {
-        font-weight: 600;
-        text-decoration: underline;
+
+      .splash h1 {
+        font-size: 3.5rem;
+        color: #000000;
+        margin-bottom: 25px;
       }
-      h1 {
+
+      .enter-btn {
+        font-size: 1.5rem;
+        padding: 12px 35px;
+        border-radius: 30px;
+        background: #000000;
+        border: none;
+        color: #ffffff;
+        box-shadow: 0 0 15px #000000;
+        transition: all 0.3s ease;
+      }
+
+      .enter-btn:hover {
+        background: #ffffff;
+        color: #000;
+        box-shadow: 0 0 25px #000000;
+        border: 1px solid #000000;
+        cursor: pointer;
+      }
+
+      /* Main content */
+      .main-content {
+        display: none;
+        opacity: 0;
+        animation: fadeIn 1.2s forwards;
+        padding: 2rem;
+        max-width: 900px;
+        margin: 2rem auto 4rem auto;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        box-shadow: 0 0 30px #00000022;
+      }
+
+      /* Section styling */
+      .section {
+        margin-bottom: 3rem;
+        padding: 1.8rem 2rem;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 12px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .section:hover {
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+      }
+
+      h2,
+      h3,
+      h4 {
         color: #000000;
         font-weight: 700;
-        margin-top: 2rem;
+      }
+
+      /* List items */
+      .list-group-item {
+        background: #ffffff;
+        border: 1px solid #00000011;
+        color: #000000;
+        font-weight: 600;
+        transition: background 0.3s ease, color 0.3s ease;
+        border-radius: 6px;
         margin-bottom: 0.5rem;
       }
-      h2 {
-        color: #555;
-        margin-bottom: 2rem;
-      }
-      .card {
-        max-width: 320px;
-        margin: 0 auto 3rem auto;
-        box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.163);
-      }
-      .card-img-top {
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        height: 200px;
-        object-fit: cover;
-      }
-      .btn-primary {
-        background-color: #ffffff;
-        border-color: #000000;
-      }
-      footer {
-        text-align: center;
-        padding: 1rem 0;
-        color: #00000067;
-        border-top: 1px solid #ddd;
-        margin-top: 4rem;
+
+      .list-group-item:hover {
+        background: #000000;
+        color: #ffffff;
+        cursor: pointer;
       }
 
+      /* Buttons */
+      .btn-outline-info,
+      .btn-outline-secondary {
+        color: #000000;
+        border-color: #000000;
+        transition: all 0.3s ease;
+        border-radius: 30px;
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .btn-outline-info:hover,
+      .btn-outline-secondary:hover {
+        background: #000000;
+        color: #ffffff;
+      }
+
+      /* Images */
+      .profile-img {
+        width: 200px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px #00000033;
+        transition: transform 0.3s ease;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+
+      .youtube-img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px #00000033;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .youtube-img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Navbar */
+      nav.navbar {
+        background: #000000;
+        box-shadow: 0 0 15px #00000044;
+        border-radius: 12px;
+        margin-bottom: 3rem;
+      }
+
+      nav .navbar-brand {
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 1.8rem;
+      }
+
+      /* Fade in animation */
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 576px) {
+        .profile-img {
+          width: 150px;
+        }
+
+        .youtube-img {
+          max-width: 300px;
+        }
+
+        .splash h1 {
+          font-size: 2.5rem;
+          padding: 0 1rem;
+        }
+      }
     </style>
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#">ABOUT ME</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+    <!-- Splash Page -->
+    <div
+      class="splash"
+      id="splash"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="welcome-heading"
+    >
+      <h1 id="welcome-heading">Welcome to Isaac's About Me</h1>
+      <button
+        class="btn enter-btn"
+        onclick="enterSite()"
+        aria-label="Enter Isaac's website"
+      >
+        Enter
       </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Resume</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Contact</a></li>
-                <li><a class="dropdown-item" href="#">Blog</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item btn btn-primary" target="blank"
-                   href="https://devmission-rpa.github.io/rpa-curriculum/index.html">Dev/Mission</a></li>
-              </ul>
-            </li>
-          </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container main-content" id="mainContent" tabindex="-1">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Isaac's Portfolio</a>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <main class="container text-center">
-      <h1>Hello My Name Is Isaac Fineaso</h1>
-      <h2 class="mb-4">A Proud Samoan & San Francisco Native</h2>
-    </main>
-    <div class="w-25 p-3">
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="DSC00159-Enhanced-NR.JPG" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="DSC00162-Enhanced-NR.JPG
-      " class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="DSC09932-Enhanced-NR.JPG" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-<div class="Projects">
-<h2>PROJECTS</h2>
-<div class="accordion accordion-flush" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        My Lyric Page
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item’s accordion body.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-    </div>
-  </div>
-</div>
-</div>
-    <footer>
-      &copy; 2025 Isaac Fineaso — Proud participant of Dev/Mission
-    </footer>
+      <!-- About Section -->
+      <section class="row section" id="about">
+        <div class="col-md-4 text-center">
+          <img
+            src="https://via.placeholder.com/200"
+            alt="Portrait of Isaac Fineaso"
+            class="profile-img img-thumbnail"
+          />
+        </div>
+        <div class="col-md-8">
+          <h2>About Me</h2>
+          <p>
+            I'm a passionate web and IoT developer with a love for bringing
+            ideas to life. Whether it's a web app or a microcontroller project,
+            I enjoy crafting intuitive, efficient solutions that matter.
+          </p>
+          <p>
+            Outside of coding, I’m fascinated by culture, music, and new tech. I
+            believe in learning by building and always striving to improve.
+          </p>
+        </div>
+      </section>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-   ></script>
+      <!-- Skills & Projects -->
+      <section class="section" id="skills-projects">
+        <h3>Skills & Projects</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Web Portfolio using HTML, CSS, Bootstrap
+          </li>
+          <li class="list-group-item">
+            IoT project with sensor and microcontroller integration
+          </li>
+          <li class="list-group-item">
+            Skills: HTML, CSS, JavaScript, Bootstrap, C++, Git
+          </li>
+        </ul>
+        <div class="mt-3">
+          <a
+            href="#"
+            class="btn btn-outline-info me-2"
+            aria-label="View Web App Final Project"
+            >View Web App Final Project</a
+          >
+          <a
+            href="#"
+            class="btn btn-outline-info me-2"
+            aria-label="View IoT Final Project"
+            >View IoT Final Project</a
+          >
+          <a
+            href="#"
+            target="_blank"
+            class="btn btn-outline-secondary"
+            aria-label="Visit Isaac's LinkedIn profile"
+            >LinkedIn</a
+          >
+        </div>
+      </section>
 
+      <!-- Personal Life Section -->
+      <section class="section" id="personal-life">
+        <h3>Personal Life</h3>
+        <p>
+          In my free time, I love learning about Polynesian culture, spending
+          time with family, and sharing moments on YouTube.
+        </p>
+        <h4>Check Out My YouTube!</h4>
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          aria-label="Visit Isaac's YouTube channel"
+        >
+          <img
+            src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+            alt="Thumbnail to Isaac's YouTube Channel"
+            class="youtube-img"
+          />
+        </a>
+      </section>
+    </div>
+
+    <script>
+      function enterSite() {
+        const splash = document.getElementById("splash");
+        splash.classList.add("fade-out");
+        setTimeout(() => {
+          splash.style.display = "none";
+          const mainContent = document.getElementById("mainContent");
+          mainContent.style.display = "block";
+          mainContent.focus();
+        }, 1000);
+      }
+    </script>
   </body>
 </html>
